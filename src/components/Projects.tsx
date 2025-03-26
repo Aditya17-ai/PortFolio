@@ -40,10 +40,10 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform built with React, Node.js, and MongoDB. Features include product search, cart management, payment processing, and admin dashboard.',
+      title: 'BrainBrawl',
+      description: 'A full-featured Quiz Web Application built with React, Node.js, and MongoDB. Features include product search, cart management, payment processing, and admin dashboard.',
       image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+      tags: ['React', 'Node.js', 'Express.js', 'Socket.io'],
       links: {
         live: '#',
         github: '#',
