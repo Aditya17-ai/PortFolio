@@ -50,10 +50,10 @@ const Projects = () => {
       },
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website built with React and TailwindCSS. Features smooth animations, dynamic content loading, and contact form.',
+      title: 'Musify',
+      description: 'A web music player built with HTML,CSS and Javascript having play,pause and seek feature in it ,
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80',
-      tags: ['React', 'TailwindCSS', 'Framer Motion'],
+      tags: ['HTML','CSS','JS', 'Framer Motion'],
       links: {
         live: '#',
         github: '#',
