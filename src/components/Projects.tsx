@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -41,8 +40,8 @@ const Projects = () => {
   const projects: Project[] = [
     {
       title: 'BrainBrawl',
-      description: 'A full-featured Quiz Web Application built with React, Node.js, and MongoDB. Features include product search, cart management, payment processing, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80',
+      description: 'A full-featured Quiz Web Application focused on question and answering. Users can participate in real-time Q&A quizzes, compete on leaderboards, and review their performance. Built with React, Node.js, and MongoDB.',
+      image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80', // Q&A/quiz themed image
       tags: ['React', 'Node.js', 'Express.js', 'Socket.io'],
       links: {
         live: '#',
@@ -51,22 +50,22 @@ const Projects = () => {
     },
     {
       title: 'Musify',
-      description: 'A web music player built with HTML,CSS and Javascript having play,pause and seek feature in it ,
+      description: 'A web music player built with HTML, CSS and Javascript having play, pause and seek feature in it.',
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80',
       tags: ['HTML','CSS','JS', 'Framer Motion'],
       links: {
         live: '#',
-        github: '#',
+        github: 'https://github.com/Aditya17-ai/Musify',
       },
     },
     {
-      title: 'Task Management App',
-      description: 'A productivity app that helps users manage tasks, set deadlines, and track progress. Features include drag-and-drop organization, reminders, and data visualization.',
+      title: 'Job Application Tracker (Mini-CRM)',
+      description: 'A mini-CRM to help users track job applications, manage company contacts, set reminders, and visualize application progress. Features include status tracking, notes, and analytics dashboard.',
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
-      tags: ['TypeScript', 'React', 'Firebase', 'ChartJS'],
+      tags: ['React', 'TypeScript', 'Material UI', 'NodeJS', 'Express'],
       links: {
-        live: '#',
-        github: '#',
+        live: 'https://mini-crm-tau.vercel.app/',
+        github: 'https://github.com/Aditya17-ai/Mini-CRM',
       },
     },
   ];

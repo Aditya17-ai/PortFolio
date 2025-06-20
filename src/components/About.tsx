@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
-import { Award, Briefcase, Calendar } from 'lucide-react';
+import { Award, Briefcase } from 'lucide-react';
 
 const About = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -27,23 +26,7 @@ const About = () => {
     };
   }, []);
 
-  const stats = [
-    { 
-      icon: <Calendar size={24} className="mb-4 text-primary/80" />,
-      value: "5+",
-      label: "Years Experience"
-    },
-    { 
-      icon: <Briefcase size={24} className="mb-4 text-primary/80" />,
-      value: "50+",
-      label: "Projects Completed"
-    },
-    { 
-      icon: <Award size={24} className="mb-4 text-primary/80" />,
-      value: "10+",
-      label: "Awards Received"
-    }
-  ];
+  const stats = [];
 
   return (
     <section id="about" className="py-24 bg-secondary/30">
@@ -70,18 +53,13 @@ const About = () => {
             
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Hello! I'm a passionate designer and developer with a keen eye for detail and a love for creating
-                beautiful, functional digital experiences. My journey in the digital world began over 5 years ago,
-                and I've been honing my craft ever since.
+               Hi, I'm Aditya Kumar, a B.Tech student in Computer Science and Engineering with a deep passion for building impactful and efficient software solutions. I specialize in full-stack web development, particularly using technologies like React, Node.js, Express, and MongoDB.
               </p>
               <p>
-                I believe that great design is not just about aesthetics, but also about solving problems and
-                creating intuitive user experiences. I strive to create work that not only looks beautiful but
-                also serves a purpose and delivers results.
+                As an enthusiastic learner and a problem-solver, I enjoy turning ideas into real-world applications — from scalable web apps and real-time chat systems to data-driven dashboards and automation tools. I’ve worked on projects that involve real-time processing, background task queues, and RESTful APIs, and I’m always exploring ways to optimize performance and user experience.
               </p>
               <p>
-                When I'm not designing or coding, you can find me exploring new technologies, reading design
-                blogs, or seeking inspiration in nature and architecture.
+                Currently, I’m focused on strengthening my backend development and system design skills while contributing to open-source and building my own products. I believe in clean code, collaboration, and constantly pushing the boundaries of what I can create.
               </p>
             </div>
             
@@ -95,19 +73,31 @@ const About = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {stats.map((stat, index) => (
-              <div 
-                key={stat.label}
-                ref={el => statRefs.current[index] = el}
-                className="glass-card p-6 rounded-xl text-center flex flex-col items-center reveal-animation"
-                style={{ transitionDelay: `${300 + (index * 100)}ms` }}
-              >
-                {stat.icon}
-                <span className="text-3xl font-bold mb-1">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
-              </div>
-            ))}
+          <div className="flex justify-center mt-8 gap-4">
+            <a
+              href="https://github.com/aditya17-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 text-white font-medium shadow-md hover:bg-gray-800 transition-colors btn-hover"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22" />
+              </svg>
+              <span>My GitHub</span>
+            </a>
+            <a
+              href="https://www.instagram.com/a.ditya_882/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-medium shadow-md hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 transition-colors btn-hover"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              <span>My Instagram</span>
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 
 type SkillCategory = {
   name: string;
@@ -50,6 +50,7 @@ const Skills = () => {
       skills: [
         { name: 'Node.js', level: 80 },
         { name: 'Express', level: 75 },
+        { name: 'Spring Boot', level: 70 },
         { name: 'MongoDB', level: 70 },
         { name: 'SQL', level: 65 },
         { name: 'REST API', level: 85 },
@@ -67,6 +68,45 @@ const Skills = () => {
     },
   ];
 
+  const skillIconMap: Record<string, string> = {
+    'HTML & CSS': '🌐',
+    'JavaScript': '🟨',
+    'React': '⚛️',
+    'TypeScript': '🔷',
+    'TailwindCSS': '💨',
+    'Node.js': '🟩',
+    'Express': '🚂',
+    'Spring Boot': '🌱',
+    'MongoDB': '🍃',
+    'SQL': '🗄️',
+    'REST API': '🔗',
+    'Git & GitHub': '🐙',
+    'UI/UX Design': '🎨',
+    'Responsive Design': '📱',
+    'Testing': '🧪',
+    'Performance Optimization': '⚡',
+  };
+
+  // Add a description for each skill
+  const skillDescriptions: Record<string, string> = {
+    'HTML & CSS': 'Markup and styling for building web pages.',
+    'JavaScript': 'Dynamic scripting language for web development.',
+    'React': 'A JavaScript library for building user interfaces.',
+    'TypeScript': 'Typed superset of JavaScript for scalable apps.',
+    'TailwindCSS': 'Utility-first CSS framework for rapid UI development.',
+    'Node.js': 'JavaScript runtime for server-side development.',
+    'Express': 'Minimal and flexible Node.js web application framework.',
+    'Spring Boot': 'Java-based framework for building robust backend applications.',
+    'MongoDB': 'NoSQL database for modern applications.',
+    'SQL': 'Structured Query Language for relational databases.',
+    'REST API': 'Architectural style for networked applications.',
+    'Git & GitHub': 'Version control and collaboration platform.',
+    'UI/UX Design': 'Designing user interfaces and experiences.',
+    'Responsive Design': 'Building layouts that adapt to any device.',
+    'Testing': 'Ensuring code quality and reliability.',
+    'Performance Optimization': 'Improving speed and efficiency of apps.',
+  };
+
   return (
     <section id="skills" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
@@ -80,6 +120,7 @@ const Skills = () => {
           <p className="section-subtitle">What I bring to the table</p>
         </div>
 
+        <TooltipProvider>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div 
@@ -91,26 +132,28 @@ const Skills = () => {
               <h3 className="text-xl font-display font-medium mb-6 text-center">
                 {category.name}
               </h3>
-              
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-wrap gap-2 justify-center">
                 {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary transition-all duration-1000 ease-out origin-left scale-x-0 active:scale-x-100"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <Tooltip key={skill.name}>
+                    <TooltipTrigger asChild>
+                      <button
+                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 shadow hover:bg-primary/90 hover:text-white transition-colors cursor-pointer border border-primary/20 text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                        type="button"
+                      >
+                        <span className="text-xl">{skillIconMap[skill.name] || '🔹'}</span>
+                        <span>{skill.name}</span>
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="top">
+                      {skillDescriptions[skill.name] || 'No description available.'}
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
             </div>
           ))}
         </div>
+        </TooltipProvider>
       </div>
     </section>
   );
